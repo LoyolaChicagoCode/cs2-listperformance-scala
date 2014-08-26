@@ -73,13 +73,16 @@ class TestList extends FunSuite with BeforeAndAfterEach{
     list = list :+ 55
     list = list :+ 77
     list = list :+ 66 // what does this method do?
+
+    def remove(value: Int) = list diff List(value)
+
     // TODO fix the expected values in the assertions below
     assert(list.size == 0)
     assert(list.indexOf(77) == 0)
     assert(list.lastIndexOf(77) == 0)
     assert(list(2).intValue() == 0)
     assert(list(3).intValue() == 0)
-    list = list diff List(5) // what does this one do?
+    list = remove(5) // what does this one do?
     assert(list.size == 0)
     assert(list.indexOf(77) == 0)
     assert(list.lastIndexOf(77) == 0)
@@ -174,7 +177,9 @@ class TestList extends FunSuite with BeforeAndAfterEach{
     list = list :+ 55
     list = list :+ 77
     list = list :+ 66
+
     def subList(start: Int, end: Int): List[Int] = list.drop(start).take(end - start)
+
     // TODO fix the arguments in the subList method so that the assertion
     // passes
     assert(List(44, 77, 55) == subList(0, 0))
