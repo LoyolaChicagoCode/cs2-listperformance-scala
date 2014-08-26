@@ -145,4 +145,24 @@ class TestList extends FunSuite with BeforeAndAfterEach{
     assert(List(77, 77, 77) == list)
   }
 
+  test("testSet") {
+    list = list :+ 33
+    list = list :+ 77
+    list = list :+ 44
+    list = list :+ 77
+    list = list :+ 55
+    list = list :+ 77
+    list = list :+ 66
+    // TODO use the set method to change specific elements in the list
+    // such that the following assertions pass
+    // (without touching the assertions themselves)
+    assert(list.size == 7)
+    assert(list(0).intValue() == 33)
+    assert(list(1).intValue() == 99)
+    assert(list(2).intValue() == 44)
+    assert(list(3).intValue() == 99)
+    assert(list(4).intValue() == 55)
+    assert(list(5).intValue() == 99)
+    assert(list(6).intValue() == 66)
+  }
 }
