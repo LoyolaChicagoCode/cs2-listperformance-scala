@@ -130,6 +130,19 @@ class TestList extends FunSuite with BeforeAndAfterEach{
     assert(List(77, 77, 77) == list)
   }
 
-  
+  test("testRetainAll") {
+    list = list :+ 33
+    list = list :+ 77
+    list = list :+ 44
+    list = list :+ 77
+    list = list :+ 55
+    list = list :+ 77
+    list = list :+ 66
+    // TODO in a single statement using retainAll and Arrays.asList,
+    // remove items from the list to make the following assertions pass
+    // (without touching the assertions themselves)
+    assert(list.size == 3)
+    assert(List(77, 77, 77) == list)
+  }
 
 }
