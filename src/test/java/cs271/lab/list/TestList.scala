@@ -101,4 +101,35 @@ class TestList extends FunSuite with BeforeAndAfterEach{
     fail("Not yet implemented"); // remove this line when done
   }
 
+  test("testAddAll") {
+    // TODO in a single statement using addAll and Arrays.asList,
+    // add items to the list to make the following assertions pass
+    // (without touching the assertions themselves)
+    assert(list.size == 7)
+    assert(list(0).intValue() == 33)
+    assert(list(1).intValue() == 77)
+    assert(list(2).intValue() == 44)
+    assert(list(3).intValue() == 77)
+    assert(list(4).intValue() == 55)
+    assert(list(5).intValue() == 77)
+    assert(list(6).intValue() == 66)
+  }
+
+  test("testRemoveAll") {
+    list = list :+ 33
+    list = list :+ 77
+    list = list :+ 44
+    list = list :+ 77
+    list = list :+ 55
+    list = list :+ 77
+    list = list :+ 66
+    // TODO in a single statement using removeAll and Arrays.asList,
+    // remove items from the list to make the following assertions pass
+    // (without touching the assertions themselves)
+    assert(list.size == 3)
+    assert(List(77, 77, 77) == list)
+  }
+
+  
+
 }
