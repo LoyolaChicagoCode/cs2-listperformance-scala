@@ -69,5 +69,21 @@ class TestIterator extends FunSuite with BeforeAndAfterEach{
     fail("Not yet implemented"); // remove this line when done
   }
 
-  
+  test("Test average value") {
+    list = list :+ 33
+    list = list :+ 77
+    list = list :+ 44
+    list = list :+ 77
+    list = list :+ 55
+    list = list :+ 77
+    list = list :+ 66
+
+    val sum: Double = 0;
+    val n: Int = 0;
+    // TODO use an iterator and a while loop to compute the average (mean) of the values
+    // (defined as the sum of the items divided by the number of items)
+    assert(n == 7)
+    assert("%.2f".format(sum / n).toDouble == 61.29)
+  }
+
 }
