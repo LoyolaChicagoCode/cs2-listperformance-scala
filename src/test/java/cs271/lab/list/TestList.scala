@@ -22,4 +22,30 @@ class TestList extends FunSuite with BeforeAndAfterEach{
     }
   }
 
+  test("Test size non-empty"){
+    // TODO fix the expected values in the assertions below
+    list = list :+ 77
+    assert(list.isEmpty == true)
+    assert(list.size == 0)
+    assert(list(0).intValue() == 0)
+  }
+
+  test("Test contains") {
+    // TODO write assertions using
+    // list.contains(77)
+    // that hold before and after adding 77 to the list
+    fail("Not yet implemented") // remove this line when done
+  }
+
+  test("Test add multiple") {
+    list = list :+ 77
+    list = list :+ 77
+    list = list :+ 77
+    // TODO fix the expected values in the assertions below
+    assert(list.size == 0)
+    assert(list.indexOf(77) == 0)
+    assert(list(1).intValue() == 0)
+    assert(list.lastIndexOf(77) == 0)
+  }
+
 }
