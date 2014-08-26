@@ -48,4 +48,21 @@ class TestList extends FunSuite with BeforeAndAfterEach{
     assert(list.lastIndexOf(77) == 0)
   }
 
+  test("Test add multiple 2") {
+    list = list :+ 33
+    list = list :+ 77
+    list = list :+ 44
+    list = list :+ 77
+    list = list :+ 55
+    list = list :+ 77
+    list = list :+ 66
+    // TODO fix the expected values in the assertions below
+    assert(list.size == 0)
+    assert(list.indexOf(77) == 0)
+    assert(list.lastIndexOf(77) == 0)
+    assert(list(2).intValue() == 0)
+    assert(list(3).intValue() == 0)
+    assert(List(33, 77, 44) == list)
+  }
+
 }
