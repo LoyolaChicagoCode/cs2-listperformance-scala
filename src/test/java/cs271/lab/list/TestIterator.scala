@@ -46,7 +46,9 @@ class TestIterator extends FunSuite with BeforeAndAfterEach{
     assert(i.hasNext == false)
   }
 
-  /*test("Test remove") {
+  test("Test remove") {
+    //def removeOne(num: Int, listCopy: List[Int]) = list diff List(num)
+
     list = list :+ 33
     list = list :+ 77
     list = list :+ 44
@@ -54,15 +56,18 @@ class TestIterator extends FunSuite with BeforeAndAfterEach{
     list = list :+ 55
     list = list :+ 77
     list = list :+ 66
-    val i: Iterator[Int] = list.iterator
+    val i = list.iterator
 
     while (i.hasNext) {
-      if (i.next == 77) {
-        i.remove // TODO what happens if you use list.remove(77)?
+      val value = i.next()
+      if (value == 77) {
+         list = list diff List(value) // TODO what happens if you use list.remove(77)?
       }
     }
     // TODO using assertEquals and Arrays.asList (see above)
     // express which values are left in the list
     fail("Not yet implemented"); // remove this line when done
-  }*/
+  }
+
+  
 }
