@@ -11,7 +11,7 @@ class TestList extends FunSuite with BeforeAndAfterEach{
     list = Nil
   }
 
-  test("Test size empty"){
+  test("testSizeEmpty"){
     assert(list.isEmpty == true)
     assert(list.size == 0)
     try {
@@ -22,7 +22,7 @@ class TestList extends FunSuite with BeforeAndAfterEach{
     }
   }
 
-  test("Test size non-empty"){
+  test("testSizeNonEmpty"){
     // TODO fix the expected values in the assertions below
     list = list :+ 77
     assert(list.isEmpty == true)
@@ -30,14 +30,14 @@ class TestList extends FunSuite with BeforeAndAfterEach{
     assert(list(0).intValue() == 0)
   }
 
-  test("Test contains") {
+  test("testContains") {
     // TODO write assertions using
     // list.contains(77)
     // that hold before and after adding 77 to the list
     fail("Not yet implemented") // remove this line when done
   }
 
-  test("Test add multiple") {
+  test("testAddMultiple") {
     list = list :+ 77
     list = list :+ 77
     list = list :+ 77
@@ -48,7 +48,7 @@ class TestList extends FunSuite with BeforeAndAfterEach{
     assert(list.lastIndexOf(77) == 0)
   }
 
-  test("Test add multiple 2") {
+  test("testAddMultiple2") {
     list = list :+ 33
     list = list :+ 77
     list = list :+ 44
@@ -65,7 +65,7 @@ class TestList extends FunSuite with BeforeAndAfterEach{
     assert(List(33, 77, 44) == list)
   }
 
-  test("Test remove object") {
+  test("testRemoveObject") {
     list = list :+ 33
     list = list :+ 77
     list = list :+ 44
@@ -86,5 +86,19 @@ class TestList extends FunSuite with BeforeAndAfterEach{
     assert(list(2).intValue() == 0)
     assert(list(3).intValue() == 0)
   }
-  
+
+  test("testContainsAll") {
+    list = list :+ 33
+    list = list :+ 77
+    list = list :+ 44
+    list = list :+ 77
+    list = list :+ 55
+    list = list :+ 77
+    list = list :+ 66
+    // TODO using containsAll and Arrays.asList (see above),
+    // 1) assert that list contains all five different numbers added
+    // 2) assert that list does not contain all of 11, 22, and 33
+    fail("Not yet implemented"); // remove this line when done
+  }
+
 }
