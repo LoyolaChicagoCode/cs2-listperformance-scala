@@ -7,6 +7,7 @@ class TestIterator extends FunSuite with BeforeAndAfterEach{
 
   override def beforeEach(){
     list = List()
+    // TODO also try with a LinkedList - does it make any difference?
   }
 
   override def afterEach(){
