@@ -165,4 +165,19 @@ class TestList extends FunSuite with BeforeAndAfterEach{
     assert(list(5).intValue() == 99)
     assert(list(6).intValue() == 66)
   }
+
+  test("testSubList") {
+    list = list :+ 33
+    list = list :+ 77
+    list = list :+ 44
+    list = list :+ 77
+    list = list :+ 55
+    list = list :+ 77
+    list = list :+ 66
+    def subList(start: Int, end: Int): List[Int] = list.drop(start).take(end - start)
+    // TODO fix the arguments in the subList method so that the assertion
+    // passes
+    assert(List(44, 77, 55) == subList(0, 0))
+  }
+
 }
