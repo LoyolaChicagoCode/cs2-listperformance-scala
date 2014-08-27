@@ -1,3 +1,5 @@
+package cs271.lab.list
+
 import org.scalatest.{BeforeAndAfterEach, FunSuite}
 
 class TestPerformance extends FunSuite with BeforeAndAfterEach{
