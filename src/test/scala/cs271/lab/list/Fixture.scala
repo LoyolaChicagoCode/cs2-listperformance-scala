@@ -3,7 +3,10 @@ package cs271.lab.list
 import scala.collection.mutable.ArrayBuffer
 
 object Fixture {
-  // TODO also try with a LinkedList - does it make any difference?
+
+  // TODO also try with a ListBuffer
+  // TODO answer this question: does it make any difference?
+
   def fixture() = new ArrayBuffer[Int]
 
   def populate(list: ArrayBuffer[Int]): Unit = {
