@@ -6,7 +6,6 @@ class TestIterator extends FunSuite {
 
   test("testEmptyList"){
     val list = Fixture.fixture()
-    Fixture.populate(list)
     val iterator = list.iterator
     assert(! iterator.hasNext)
   }
