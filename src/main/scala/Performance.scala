@@ -17,7 +17,9 @@ object Performance {
     val fixture = new ArrayBuffer[Int]
     val size = 10000
 
-    for (i <- 0 until size) fixture += i
+    timeThis(s"${fixture.getClass.getSimpleName} fixture creation") { 
+      for (i <- 0 until size) fixture += i
+    }
 
     timeThis(s"${fixture.getClass.getSimpleName} fixture size = ${fixture.length} random access") {
       var x = 0L
