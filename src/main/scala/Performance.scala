@@ -18,13 +18,13 @@ object Performance {
 
     for (i <- 0 to size) fixture += i
 
-    timeThis(fixture.getClass.getSimpleName + " size " + size + " random access") {
+    timeThis(fixture.getClass.getSimpleName + s" fixture size = ${fixture.length} random access") {
       var x = 0L
       for (r <- 0 to REPS)
         x = fixture(r % size)
     }
 
-    timeThis(fixture.getClass.getSimpleName + " size " + size + " add/remove") {
+    timeThis(fixture.getClass.getSimpleName + " fixture size = ${fixture.length} add/remove") {
       for (r <- 0 to REPS)
         fixture.insert(0, 77)
         fixture.remove(0)
