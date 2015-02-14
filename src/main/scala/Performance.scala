@@ -16,16 +16,16 @@ object Performance {
     val fixture = new ArrayBuffer[Int]
     val size = 10000
 
-    for (i <- 0 to size) fixture += i
+    for (i <- 0 until size) fixture += i
 
-    timeThis(fixture.getClass.getSimpleName + s" fixture size = ${fixture.length} random access") {
+    timeThis(s"${fixture.getClass.getSimpleName} fixture size = ${fixture.length} random access") {
       var x = 0L
-      for (r <- 0 to REPS)
+      for (r <- 0 until REPS)
         x = fixture(r % size)
     }
 
-    timeThis(fixture.getClass.getSimpleName + " fixture size = ${fixture.length} add/remove") {
-      for (r <- 0 to REPS)
+    timeThis(s"${fixture.getClass.getSimpleName} fixture size = ${fixture.length} add/remove") {
+      for (r <- 0 until REPS)
         fixture.insert(0, 77)
         fixture.remove(0)
     }
