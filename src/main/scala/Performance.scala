@@ -1,8 +1,12 @@
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
+import scala.util.Random.nextInt
+import scala.util.Try
 
 object Performance {
 
+  // default experiment sizes
   val REPS = 100000
+  val SIZE = 5000
 
   // TODO modify this program so that it runs for SIZE = 10, 100, 1000, 10000
   // and for both ArrayBuffer and ListBuffer
@@ -12,22 +16,33 @@ object Performance {
 
 
   def main(args: Array[String]): Unit = {
+ 
+    val arg0 = Try(args(0).toInt).toOption
+    val reps = arg0.getOrElse(REPS)
+
+    val arg1 = Try(args(1).toInt).toOption
+    val size = arg1.getOrElse(SIZE)
 
     val fixture = new ArrayBuffer[Int]
-    val size = 10000
 
-    for (i <- 0 to size) fixture += i
-
-    timeThis(fixture.getClass.getSimpleName + " size " + size + " random access") {
-      var x = 0L
-      for (r <- 0 to REPS)
-        x = fixture(r % size)
+    timeThis(s"${fixture.getClass.getSimpleName} fixture creation (size = $size)") { 
+      for (i <- 0 until size) fixture += i
     }
 
-    timeThis(fixture.getClass.getSimpleName + " size " + size + " add/remove") {
-      for (r <- 0 to REPS)
-        fixture.insert(0, 77)
-        fixture.remove(0)
+    timeThis(s"${fixture.getClass.getSimpleName} reps = $reps fixture size = ${fixture.length} random access") {
+      var x = 0L
+      for (r <- 0 until reps) {
+        val randomPosition = nextInt(fixture.length)
+        x = fixture(randomPosition % size)
+      }
+    }
+
+    timeThis(s"${fixture.getClass.getSimpleName} reps = $reps fixture size = ${fixture.length} random add/remove") {
+      for (r <- 0 until reps) {
+        val randomPosition = nextInt(fixture.length)
+        fixture.insert(randomPosition, 77)
+        fixture.remove(randomPosition)
+      }
     }
   }
 
@@ -35,7 +50,7 @@ object Performance {
     val time0 = System.currentTimeMillis
     val b = block
     val time1 = System.currentTimeMillis - time0
-    println("Timing " + s + " = " + time1)
+    println(s"$s = $time1 ms")
     b
   }
 }
