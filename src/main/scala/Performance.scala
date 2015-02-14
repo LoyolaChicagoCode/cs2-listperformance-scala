@@ -1,4 +1,5 @@
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
+import scala.util.Random.nextInt
 
 object Performance {
 
@@ -20,14 +21,18 @@ object Performance {
 
     timeThis(s"${fixture.getClass.getSimpleName} fixture size = ${fixture.length} random access") {
       var x = 0L
-      for (r <- 0 until REPS)
-        x = fixture(r % size)
+      for (r <- 0 until REPS) {
+        val randomPosition = nextInt(fixture.length)
+        x = fixture(randomPosition % size)
+      }
     }
 
-    timeThis(s"${fixture.getClass.getSimpleName} fixture size = ${fixture.length} add/remove") {
-      for (r <- 0 until REPS)
-        fixture.insert(0, 77)
-        fixture.remove(0)
+    timeThis(s"${fixture.getClass.getSimpleName} fixture size = ${fixture.length} random add/remove") {
+      for (r <- 0 until REPS) {
+        val randomPosition = nextInt(fixture.length)
+        fixture.insert(randomPosition, 77)
+        fixture.remove(randomPosition)
+      }
     }
   }
 
