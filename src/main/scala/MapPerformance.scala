@@ -17,11 +17,8 @@ object MapPerformance {
 
   def main(args: Array[String]): Unit = {
  
-    val arg0 = Try(args(0).toInt).toOption
-    val reps = arg0.getOrElse(REPS)
-
-    val arg1 = Try(args(1).toInt).toOption
-    val size = arg1.getOrElse(SIZE)
+    val reps = Try(args(0).toInt).getOrElse(REPS)
+    val size = Try(args(1).toInt).getOrElse(SIZE)
 
     val fixture = new HashMap[Int, Int]
 
