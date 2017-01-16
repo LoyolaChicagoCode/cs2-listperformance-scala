@@ -1,4 +1,4 @@
-import scala.collection.mutable.{ArrayBuffer, ListBuffer}
+import scala.collection.mutable.{ ArrayBuffer, ListBuffer }
 import scala.util.Random.nextInt
 import scala.util.Try
 
@@ -14,9 +14,8 @@ object Performance {
   // TODO answer this question: which of the two lists implementations performs better
   // as the size increases?
 
-
   def main(args: Array[String]): Unit = {
- 
+
     val arg0 = Try(args(0).toInt).toOption
     val reps = arg0.getOrElse(REPS)
 
@@ -25,7 +24,7 @@ object Performance {
 
     val fixture = new ArrayBuffer[Int]
 
-    timeThis(s"${fixture.getClass.getSimpleName} fixture creation (size = $size)") { 
+    timeThis(s"${fixture.getClass.getSimpleName} fixture creation (size = $size)") {
       for (i <- 0 until size) fixture += i
     }
 
