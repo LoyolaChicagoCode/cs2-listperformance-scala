@@ -14,9 +14,8 @@ object MapPerformance {
   // TODO answer this question: which of the two lists implementations performs better
   // as the size increases?
 
-
   def main(args: Array[String]): Unit = {
- 
+
     val arg0 = Try(args(0).toInt).toOption
     val reps = arg0.getOrElse(REPS)
 
@@ -25,7 +24,7 @@ object MapPerformance {
 
     val fixture = new HashMap[Int, Int]
 
-    timeThis(s"${fixture.getClass.getSimpleName} fixture creation (size = $size)") { 
+    timeThis(s"${fixture.getClass.getSimpleName} fixture creation (size = $size)") {
       for (i <- 0 until size) fixture.put(i, i)
     }
 

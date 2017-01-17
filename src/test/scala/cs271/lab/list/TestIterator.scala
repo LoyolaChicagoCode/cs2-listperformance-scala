@@ -4,13 +4,13 @@ import org.scalatest.FunSuite
 
 class TestIterator extends FunSuite {
 
-  test("testEmptyList"){
+  test("testEmptyList") {
     val list = Fixture.fixture()
     val iterator = list.iterator
-    assert(! iterator.hasNext)
+    assert(!iterator.hasNext)
   }
 
-  test("testNonEmptyList"){
+  test("testNonEmptyList") {
     val list = Fixture.fixture()
     Fixture.populate(list)
     val i = list.iterator
