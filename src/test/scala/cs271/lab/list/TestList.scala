@@ -125,5 +125,4 @@ class TestList extends FunSuite {
     // passes
     assert(List(44, 77, 55) == list.slice(0, 0))
   }
-
 }

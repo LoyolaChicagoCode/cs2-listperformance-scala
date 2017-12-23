@@ -1,4 +1,4 @@
-import scala.collection.mutable.{ ArrayBuffer, ListBuffer }
+import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 import scala.util.Random.nextInt
 import scala.util.Try
 
