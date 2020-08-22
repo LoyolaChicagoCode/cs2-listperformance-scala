@@ -1,8 +1,8 @@
 package cs271.lab.list
 
-import org.scalatest.FunSuite
+import org.scalatest.funsuite.AnyFunSuite
 
-class TestList extends FunSuite {
+class TestList extends AnyFunSuite {
 
   test("testSizeEmpty") {
     val list = Fixture.fixture()
