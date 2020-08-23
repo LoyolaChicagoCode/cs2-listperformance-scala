@@ -16,20 +16,20 @@ class TestIterator extends AnyFunSuite {
     val i = list.iterator
 
     assert(i.hasNext)
-    assert(i.next === 33)
+    assert(i.next() === 33)
     // TODO fix the expected values in the assertions below
     assert(i.hasNext)
-    assert(i.next === 0)
+    assert(i.next() === 0)
     assert(i.hasNext)
-    assert(i.next === 0)
+    assert(i.next() === 0)
     assert(i.hasNext)
-    assert(i.next === 0)
+    assert(i.next() === 0)
     assert(i.hasNext)
-    assert(i.next === 0)
+    assert(i.next() === 0)
     assert(i.hasNext)
-    assert(i.next === 0)
+    assert(i.next() === 0)
     assert(i.hasNext)
-    assert(i.next === 0)
+    assert(i.next() === 0)
     assert(i.hasNext)
   }
 
