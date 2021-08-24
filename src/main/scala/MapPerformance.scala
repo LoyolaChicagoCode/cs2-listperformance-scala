@@ -25,19 +25,19 @@ object MapPerformance {
     val fixture = new HashMap[Int, Int]
 
     timeThis(s"${fixture.getClass.getSimpleName} fixture creation (size = $size)") {
-      for (i <- 0 until size) fixture.put(i, i)
+      for i <- 0 until size do fixture.put(i, i)
     }
 
     timeThis(s"${fixture.getClass.getSimpleName} reps = $reps fixture size = ${fixture.size} random access") {
       var x = 0
-      for (r <- 0 until reps) {
+      for r <- 0 until reps do {
         val randomPosition = nextInt(fixture.size)
         x = fixture(randomPosition % size)
       }
     }
 
     timeThis(s"${fixture.getClass.getSimpleName} reps = $reps fixture size = ${fixture.size} random add/remove") {
-      for (r <- 0 until reps) {
+      for r <- 0 until reps do {
         val randomPosition = nextInt(fixture.size)
         fixture.put(randomPosition, randomPosition)
         fixture.remove(randomPosition)
