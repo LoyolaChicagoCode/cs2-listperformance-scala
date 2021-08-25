@@ -16,20 +16,20 @@ class TestIterator extends AnyFunSuite {
     val i = list.iterator
 
     assert(i.hasNext)
-    assert(i.next() === 33)
+    assert(i.next() == 33)
     // TODO fix the expected values in the assertions below
     assert(i.hasNext)
-    assert(i.next() === 0)
+    assert(i.next() == 0)
     assert(i.hasNext)
-    assert(i.next() === 0)
+    assert(i.next() == 0)
     assert(i.hasNext)
-    assert(i.next() === 0)
+    assert(i.next() == 0)
     assert(i.hasNext)
-    assert(i.next() === 0)
+    assert(i.next() == 0)
     assert(i.hasNext)
-    assert(i.next() === 0)
+    assert(i.next() == 0)
     assert(i.hasNext)
-    assert(i.next() === 0)
+    assert(i.next() == 0)
     assert(i.hasNext)
   }
 
@@ -41,7 +41,7 @@ class TestIterator extends AnyFunSuite {
     var n: Int = 0
     // TODO use for loop comprehension over the list to compute the average (mean) of the values
     // (defined as the sum of the items divided by the number of items)
-    assert(n === 7)
-    assert((sum.toDouble / n).round === 61)
+    assert(n == 7)
+    assert((sum.toDouble / n).round == 61)
   }
 }
