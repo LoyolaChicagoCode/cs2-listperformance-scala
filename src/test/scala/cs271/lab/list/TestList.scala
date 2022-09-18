@@ -2,7 +2,7 @@ package cs271.lab.list
 
 import org.scalatest.funsuite.AnyFunSuite
 
-class TestList extends AnyFunSuite {
+class TestList extends AnyFunSuite:
 
   test("testSizeEmpty") {
     val list = Fixture.fixture()
@@ -125,4 +125,5 @@ class TestList extends AnyFunSuite {
     // passes
     assert(List(44, 77, 55) == list.slice(0, 0))
   }
-}
+
+end TestList

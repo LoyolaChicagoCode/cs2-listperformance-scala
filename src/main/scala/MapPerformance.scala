@@ -2,7 +2,7 @@ import scala.collection.mutable.HashMap
 import scala.util.Random.nextInt
 import scala.util.Try
 
-object MapPerformance {
+object MapPerformance:
 
   // default experiment sizes
   val REPS = 100000
@@ -14,7 +14,7 @@ object MapPerformance {
   // TODO answer this question: which of the two lists implementations performs better
   // as the size increases?
 
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit =
 
     val arg0 = Try(args(0).toInt).toOption
     val reps = arg0.getOrElse(REPS)
@@ -30,26 +30,23 @@ object MapPerformance {
 
     timeThis(s"${fixture.getClass.getSimpleName} reps = $reps fixture size = ${fixture.size} random access") {
       var x = 0
-      for r <- 0 until reps do {
+      for r <- 0 until reps do
         val randomPosition = nextInt(fixture.size)
         x = fixture(randomPosition % size)
-      }
     }
 
     timeThis(s"${fixture.getClass.getSimpleName} reps = $reps fixture size = ${fixture.size} random add/remove") {
-      for r <- 0 until reps do {
+      for r <- 0 until reps do
         val randomPosition = nextInt(fixture.size)
         fixture.put(randomPosition, randomPosition)
         fixture.remove(randomPosition)
-      }
     }
-  }
 
-  def timeThis[A](s: String)(block: => A): A = {
+  def timeThis[A](s: String)(block: => A): A =
     val time0 = System.currentTimeMillis
     val b = block
     val time1 = System.currentTimeMillis - time0
     println(s"$s = $time1 ms")
     b
-  }
-}
+
+end MapPerformance

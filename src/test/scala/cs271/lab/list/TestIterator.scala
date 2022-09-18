@@ -2,7 +2,7 @@ package cs271.lab.list
 
 import org.scalatest.funsuite.AnyFunSuite
 
-class TestIterator extends AnyFunSuite {
+class TestIterator extends AnyFunSuite:
 
   test("testEmptyList") {
     val list = Fixture.fixture()
@@ -44,4 +44,5 @@ class TestIterator extends AnyFunSuite {
     assert(n == 7)
     assert((sum.toDouble / n).round == 61)
   }
-}
+
+end TestIterator
