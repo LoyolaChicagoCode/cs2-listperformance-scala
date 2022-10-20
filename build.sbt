@@ -2,10 +2,8 @@ name := "cs2-listperformance-scala"
 
 version := "0.2"
 
-scalaVersion := "3.1.3"
+scalaVersion := "3.2.0"
 
-scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked", "-Yexplicit-nulls", "-language:strictEquality")
+scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked", "-Yexplicit-nulls", "-Ysafe-init", "-language:strictEquality")
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.13" % Test
-
-scalacOptions ++= Seq("-rewrite", "-new-syntax")
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.14" % Test
