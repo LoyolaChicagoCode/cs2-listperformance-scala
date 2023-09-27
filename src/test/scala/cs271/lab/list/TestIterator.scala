@@ -4,13 +4,12 @@ import org.scalatest.funsuite.AnyFunSuite
 
 class TestIterator extends AnyFunSuite:
 
-  test("testEmptyList") {
+  test("testEmptyList"):
     val list = Fixture.fixture()
     val iterator = list.iterator
     assert(!iterator.hasNext)
-  }
 
-  test("testNonEmptyList") {
+  test("testNonEmptyList"):
     val list = Fixture.fixture()
     Fixture.populate(list)
     val i = list.iterator
@@ -31,9 +30,8 @@ class TestIterator extends AnyFunSuite:
     assert(i.hasNext)
     assert(i.next() == 0)
     assert(i.hasNext)
-  }
 
-  test("testAverageValue") {
+  test("testAverageValue"):
     val list = Fixture.fixture()
     Fixture.populate(list)
 
@@ -43,6 +41,5 @@ class TestIterator extends AnyFunSuite:
     // (defined as the sum of the items divided by the number of items)
     assert(n == 7)
     assert((sum.toDouble / n).round == 61)
-  }
 
 end TestIterator

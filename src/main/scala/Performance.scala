@@ -24,29 +24,19 @@ object Performance:
 
     val fixture = new ArrayBuffer[Int]
 
-    timeThis(s"${fixture.getClass.getSimpleName} fixture creation (size = $size)") {
+    timeThis(s"${fixture.getClass.getSimpleName} fixture creation (size = $size)"):
       for i <- 0 until size do fixture += i
-    }
 
-    timeThis(s"${fixture.getClass.getSimpleName} reps = $reps fixture size = ${fixture.length} random access") {
+    timeThis(s"${fixture.getClass.getSimpleName} reps = $reps fixture size = ${fixture.length} random access"):
       var x = 0L
       for r <- 0 until reps do
         val randomPosition = nextInt(fixture.length)
         x = fixture(randomPosition % size)
-    }
 
-    timeThis(s"${fixture.getClass.getSimpleName} reps = $reps fixture size = ${fixture.length} random add/remove") {
+    timeThis(s"${fixture.getClass.getSimpleName} reps = $reps fixture size = ${fixture.length} random add/remove"):
       for r <- 0 until reps do
         val randomPosition = nextInt(fixture.length)
         fixture.insert(randomPosition, 77)
         fixture.remove(randomPosition)
-    }
 
-  def timeThis[A](s: String)(block: => A): A =
-    val time0 = System.currentTimeMillis
-    val b = block
-    val time1 = System.currentTimeMillis - time0
-    println(s"$s = $time1 ms")
-    b
-  
 end Performance
